@@ -18,7 +18,7 @@ async function handleMessage(message: any) {
   const chatId = message.chat.id;
   const text = message.text;
 
-  if (text.toLowerCase() === "باز کردن مینی‌اپ") {
+  if (text.toLowerCase() === "start") {
     await sendMiniaAppButton(chatId);
   }
 }
@@ -28,7 +28,7 @@ async function sendMiniaAppButton(chatId: number) {
     inline_keyboard: [
       [
         {
-          text: "باز کردن مینی‌اپ",
+          text: "start",
           web_app: { url: "https://baletestbot.netlify.app/" },
         },
       ],
