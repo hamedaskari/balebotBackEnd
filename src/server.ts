@@ -1,6 +1,6 @@
 import express from "express";
 const app = express();
-const PORT = 3000;
+const PORT = 5000;
 const BOT_TOKEN = "1060884978:yXKITOFYItkq5IsgEP2WdYRny8REUNPV5H1o6omN";
 
 app.use(express.json());
