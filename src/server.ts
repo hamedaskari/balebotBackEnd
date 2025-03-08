@@ -22,11 +22,10 @@ async function handleMessage(message: any) {
   if (text.toLowerCase() === "/app") {
     await sendMiniaAppButton(chatId);
   }
-  if (text.toLowerCase() === "/gmae") {
-    await sendGameAppButton(chatId);
-  }
+
   if (text === "/start") {
     await sendMessage(chatId, "سلام! به ربات ما خوش آمدید.");
+    await sendGameAppButton(chatId);
   }
 }
 async function sendMessage(chatId: number, text: string) {
