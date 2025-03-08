@@ -44,7 +44,7 @@ async function sendMiniaAppButton(chatId: number) {
     inline_keyboard: [
       [
         {
-          text: "/app",
+          text: "باز کردن مینی اپ",
           web_app: { url: "https://baletestbot.netlify.app/" },
         },
       ],
