@@ -1,8 +1,7 @@
 import express from "express";
 const app = express();
 const PORT = 5000;
-const BOT_TOKEN = "1060884978:yXKITOFYItkq5IsgEP2WdYRny8REUNPV5H1o6omN";
-
+const BOT_TOKEN = process.env.BOT_TOKEN;
 app.use(express.json());
 
 // دریافت آپدیت‌ها از API بله
