@@ -35,7 +35,7 @@ async function sendWelcomeMessage(chatId: number) {
       [
         {
           text: "🎮 شروع بازی",
-          callback_data: "start_game",
+          callback_data: "game",
         },
       ],
     ],
