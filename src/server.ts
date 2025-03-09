@@ -44,7 +44,7 @@ async function sendWelcomeMessage(chatId: number) {
     `برای شروع روی دکمه زیر کلیک کنید. ⬇️`;
 
   const replyMarkup = {
-    inline_button: [
+    inline_keyboard: [
       [
         {
           text: "🎮 شروع بازی",
