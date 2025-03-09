@@ -24,8 +24,6 @@ async function handleMessage(message: any) {
 
   if (text === "/start") {
     await sendWelcomeMessage(chatId);
-  } else if (text === "/game") {
-    await sendGameButton(chatId);
   }
 }
 
@@ -35,25 +33,6 @@ async function sendWelcomeMessage(chatId: number) {
       [
         {
           text: "🎮 شروع بازی",
-          callback_data: "game",
-        },
-      ],
-    ],
-  };
-
-  await sendRequest("sendMessage", {
-    chat_id: chatId,
-    text: "سلام! 👋\nبه ربات بازی 2048 خوش آمدید! اینجا می‌توانید بازی 2048 را مستقیماً اجرا کنید و از آن لذت ببرید. برای شروع روی دکمه زیر کلیک کنید. ⬇️",
-    reply_markup: replyMarkup,
-  });
-}
-
-async function sendGameButton(chatId: number) {
-  const replyMarkup = {
-    inline_keyboard: [
-      [
-        {
-          text: "🎮 بازی 2048",
           web_app: { url: "https://2048game-bale.netlify.app/" },
         },
       ],
@@ -62,7 +41,7 @@ async function sendGameButton(chatId: number) {
 
   await sendRequest("sendMessage", {
     chat_id: chatId,
-    text: "برای باز کردن بازی 2048 روی دکمه زیر کلیک کنید: 🎮",
+    text: "سلام! 👋\nبه ربات بازی 2048 خوش آمدید! اینجا می‌توانید بازی 2048 را مستقیماً اجرا کنید و از آن لذت ببرید. برای شروع روی دکمه زیر کلیک کنید. ⬇️",
     reply_markup: replyMarkup,
   });
 }
