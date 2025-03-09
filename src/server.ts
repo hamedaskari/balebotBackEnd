@@ -44,14 +44,6 @@ async function sendWelcomeMessage(chatId: number) {
     `برای شروع روی دکمه زیر کلیک کنید. ⬇️`;
 
   const replyMarkup = {
-    bot_menu_button: [
-      [
-        {
-          text: "🎮 شروع بازی",
-          web_app: { url: "https://2048game-bale.netlify.app/" },
-        },
-      ],
-    ],
     inline_button: [
       [
         {
