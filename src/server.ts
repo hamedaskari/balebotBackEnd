@@ -19,12 +19,10 @@ async function handleMessage(message: any) {
   const chatId = message.chat.id;
   const text = message.text;
 
-  if (text.toLowerCase() === "/app") {
-    await sendMiniaAppButton(chatId);
-  }
-
   if (text === "/start") {
     await sendMessage(chatId, "سلام! به ربات ما خوش آمدید.");
+  }
+  if (text === "/game") {
     await sendGameAppButton(chatId);
   }
 }
@@ -42,32 +40,7 @@ async function sendMessage(chatId: number, text: string) {
     console.error("خطا در ارسال پیام:", error);
   }
 }
-async function sendMiniaAppButton(chatId: number) {
-  const keyboard = {
-    inline_keyboard: [
-      [
-        {
-          text: "باز کردن مینی اپ",
-          web_app: { url: "https://baletestbot.netlify.app/" },
-        },
-      ],
-    ],
-  };
 
-  try {
-    await fetch(`https://tapi.bale.ai/bot${BOT_TOKEN}/sendMessage`, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        chat_id: chatId,
-        text: "برای باز کردن مینی‌اپ روی دکمه زیر کلیک کنید:",
-        reply_markup: keyboard,
-      }),
-    });
-  } catch (error) {
-    console.error("خطا در ارسال پیام:", error);
-  }
-}
 async function sendGameAppButton(chatId: number) {
   const keyboard = {
     keyboard: [
